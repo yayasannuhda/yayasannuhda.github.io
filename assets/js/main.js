@@ -3,6 +3,12 @@ const pagePath = (file) => `${pageFolder ? "" : "pages/"}${file}`;
 const homePath = pageFolder ? "../index.html" : "index.html";
 const logoPath = pageFolder ? "../assets/img/logo.jpeg" : "assets/img/logo.jpeg";
 
+const favicon = document.createElement("link");
+favicon.rel = "icon";
+favicon.type = "image/png";
+favicon.href = new URL("../img/favicon.png", document.currentScript.src).href;
+document.head.append(favicon);
+
 const commonNav = `
   <nav class="navbar navbar-expand-lg" aria-label="Navigasi utama">
     <div class="container">
@@ -38,7 +44,11 @@ const commonFooter = `
           <div class="d-flex gap-2 mt-4">
             <a class="social-link" href="https://linktr.ee/Nuhdaku" target="_blank" rel="noopener noreferrer" aria-label="Instagram, TikTok, Spotify, YouTube dan kanal resmi NUHDAKU"><i class="bi bi-link-45deg"></i></a>
             <a class="social-link" href="https://wa.me/6282115499505" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp NUHDA"><i class="bi bi-whatsapp"></i></a>
-            <a class="social-link" href="mailto:yayasannuhda@gmail.com" aria-label="Email NUHDA"><i class="bi bi-envelope"></i></a>
+            <a class="social-link" href="${pagePath("kontak.html")}" aria-label="Kontak NUHDA"><i class="bi bi-envelope"></i></a>
+            <a class="social-link" href="https://youtube.com/@nuhda615?si=djE8VE0bHstt4Zen" target="_blank" rel="noopener noreferrer" aria-label="YouTube NUHDA"><i class="bi bi-youtube"></i></a>
+            <a class="social-link" href="https://www.facebook.com/share/1EegPhSqkG/" target="_blank" rel="noopener noreferrer" aria-label="Facebook NUHDA"><i class="bi bi-facebook"></i></a>
+            <a class="social-link" href="https://www.instagram.com/nurulhasanahwal?igsi=ZGJvOTdlNnYyMzh5" target="_blank" rel="noopener noreferrer" aria-label="Instagram NUHDA"><i class="bi bi-instagram"></i></a>
+            <a class="social-link" href="https://open.spotify.com/show/4rUYpAton9t8uCH8DX0gXD" target="_blank" rel="noopener noreferrer" aria-label="Spotify NUHDA"><i class="bi bi-spotify"></i></a>
           </div>
         </div>
         <div class="col-6 col-lg-2">
